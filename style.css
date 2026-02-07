@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+:root {
+    --primary-color: #29005f;
+    --secondary-color: #ded4ff;
+    --weak-color: #fc8181;
+    --medium-color: #1b006c;
+    --strong-color: #000a49c2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
+    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+}
+
+.container {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    text-align: centre;
+    margin-bottom: 1.8rem;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-55%);
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+}
+
+.password-container {
+    margin-bottom: 2rem;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 0;
+}
+
+#password {
+    width: 100%;
+    padding: 1.1rem;
+    padding-right: 50px;
+    border: none;
+    background: transparent;
+    color: #4a5568;
+    letter-spacing: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+#copy-btn {
+    cursor: pointer;
+    color: rgba(0, 0, 201, 0.751);
+    font-size: 1.1rem;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#copy-btn:hover {
+    color: rgba(1, 255, 9, 0.938);
+}
+
+.options {
+    margin-bottom: 2rem;
+    background-color: #f3f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.25);
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: centre;
+    margin-bottom: 1rem;
+}
+
+.option:last-child {
+    margin-bottom: 0px;
+}
+
+.option label {
+    font-size: 0.9rem;
+    color: rgb(41, 0, 95);
+    font-weight: bold;
+}
+
+#length-value {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="range"] {
+    accent-color: var(--primary-color);
+    height: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    flex: 1;
+}
+
+input[type="range"]:hover {
+    box-shadow: 0 1px 5px rgb(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--primary-color);
+    appearance: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+input[type="checkbox"]::after {
+    content: "\2714";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%) scale(0.2);
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--strong-color);
+}
+
+input[type="checkbox"]:checked::after {
+    opacity: 1;
+    transform: translate(-50%, -55%) scale(1);
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgb(41, 0, 95);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.strength-container {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgb(41, 0, 95);
+}
+
+#strength-label {
+    margin-left: 0.5rem;
+}
+
+.strength-meter {
+    height: 8px;
+    width: 21rem;
+    background-color: #d8e3ef;
+    border-radius: 20px;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.15);
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    min-width: 5%;
+    background-color: var(--weak-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
